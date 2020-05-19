@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const driverRouter = require("./routes/drivers")
+const recruiterRouter = require("./routes/recruiters")
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,6 +18,7 @@ mongoose
 // ------- ROUTES -------
 app.get("/", (req, res) => res.status(200).json({ message: "Welcome to the CodeQueen Hackathon API" }));
 app.use("/driver", driverRouter);
+app.use("/recruiter", recruiterRouter);
 
 // ------ LISTENING  ------
 app.listen(port, () =>

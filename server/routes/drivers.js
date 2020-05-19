@@ -8,6 +8,7 @@ const router = express.Router();
 // 4. Update the details of a particular                      =>  '/driver/:id' - PATCH/PUT
 // 5. Delete a particular driver from the database            =>  '/driver/:id' - DELETE
 
+// TODO: Protect these routes so that only a Recruiter and may be an Admin can do this
 router.get("/", (req, res) => {
     res.status(200).json({ message: "success" });
 });
@@ -27,9 +28,5 @@ router.patch("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
     res.status(204).json({ message: "success" });
 });
-
-
-
-
 
 module.exports = router;
