@@ -1,10 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
+
 const driverRouter = require("./routes/drivers")
 const recruiterRouter = require("./routes/recruiters")
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// ----- MIDDLEWARE -----
+app.use(morgan("combined"));
+
 
 // ----- DATABASE -----
 mongoose
