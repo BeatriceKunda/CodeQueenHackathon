@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 
 const driverRouter = require("./routes/drivers")
-const recruiterRouter = require("./routes/recruiters")
+const staffRouter = require("./routes/staff")
 
 // load all environment variables in the .env file
 dotenv.config({ path: './.env' });
@@ -29,7 +29,7 @@ mongoose
 // ------- ROUTES -------
 app.get("/", (req, res) => res.status(200).json({ message: "Welcome to the CodeQueen Hackathon API" }));
 app.use("/driver", driverRouter);
-app.use("/recruiter", recruiterRouter);
+app.use("/staff", staffRouter);
 
 // ------ LISTENING  ------
 app.listen(port, () =>

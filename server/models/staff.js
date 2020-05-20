@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Recruiter = new Schema({
+const Staff = new Schema({
     firstName: { type: String, required: [true, "Please provide a first name"] },
     lastName: { type: String, required: [true, "Please provide a last Name"] },
     username: { type: String, required: [true, "Please provide a username"] },
@@ -12,4 +12,4 @@ const Recruiter = new Schema({
     drivers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Driver" }]
 });
 
-module.exports = mongoose.model("Recruiter", Recruiter);
+module.exports = mongoose.model("staff", Staff);
