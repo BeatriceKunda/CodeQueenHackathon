@@ -9,7 +9,7 @@ const Driver = new Schema({
     phoneNumber: { type: String, required: true },
     recruitmentDate: { type: Date, required: true },
     recruitmentAddr: { type: String, required: true },
-    referredBy: { type: String, required: true },
+    referredBy: { type: String },
     nextOfKin: { type: String, required: true },
     nextOfKinContact: { type: String, required: true },
     photo: String,
