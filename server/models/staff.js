@@ -9,7 +9,8 @@ const Staff = new Schema({
     passwordConfirm: { type: String, required: [true, "Please confirm your password"] }, // TODO: Add a  password validator
     email: { type: String, required: [true, "Please provide an email"] }, // TODO: Add email validation
     phoneNumber: { type: String, required: [true, "Please a phone Number"] }, // TODO: Add Number validation
-    drivers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Driver" }]
+    drivers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Driver" }],
+    role: { type: String, enum: ['admin', 'recruiter'], default: 'recruiter' }
 });
 
 module.exports = mongoose.model("staff", Staff);
