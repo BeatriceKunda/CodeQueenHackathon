@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const driverController = require("../controllers/drivers");
 
 // DRIVERS REST API Architecture for the ROUTING PATHS
 // 1. Get All drivers in our database                         =>  '/driver' - GET
@@ -9,24 +10,14 @@ const router = express.Router();
 // 5. Delete a particular driver from the database            =>  '/driver/:id' - DELETE
 
 // TODO: Protect these routes so that only a Recruiter and may be an Admin can do this
-router.get("/", (req, res) => {
-    res.status(200).json({ message: "success" });
-});
+router.get("/", driverController.getAllDrivers);
 
-router.post("/", (req, res) => {
-    res.status(201).json({ message: "success" });
-});
+router.post("/", driverController.addNewDriver);
 
-router.get("/:id", (req, res) => {
-    res.status(200).json({ message: "success" });
-});
+router.get("/:id", driverController.getSpecificDriver);
 
-router.patch("/:id", (req, res) => {
-    res.status(200).json({ message: "success" });
-});
+router.patch("/:id", driverController.editDriverDetails);
 
-router.delete("/:id", (req, res) => {
-    res.status(204).json({ message: "success" });
-});
+router.delete("/:id", driverController.deleteDriver);
 
 module.exports = router;
