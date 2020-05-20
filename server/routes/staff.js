@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const staffControllers = require("../controllers/staff");
+const staffAuthControllers = require("../controllers/staffAuth");
+
+router.post("/login", staffAuthControllers.login);
 
 // TODO: Protect these routes so that only an Admin can do this
 router.get("/", staffControllers.getAllStaff);

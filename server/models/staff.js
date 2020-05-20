@@ -7,7 +7,12 @@ const Staff = new Schema({
     firstName: { type: String, required: [true, "Please provide a first name"] },
     lastName: { type: String, required: [true, "Please provide a last Name"] },
     username: { type: String, required: [true, "Please provide a username"], unique: true, lowercase: true },
-    password: { type: String, required: [true, "Please provide a password"], minlength: 8 },
+    password: {
+        type: String,
+        required: [true, "Please provide a password"],
+        minlength: 8,
+        select: false // add this if you do not want any DB query to come with the password showing up
+    },
     passwordConfirm: {
         type: String,
         required: [true, "Please confirm your password"],
@@ -52,6 +57,9 @@ Staff.pre("save", async function (next) {
     next();
 });
 
+Staff.methods.isPasswordCorrect = async function (paspasswordToCheck, savedPassword) {
+    return await bcrypt.compare(paspasswordToCheck,  savedPassword);
+};
 
 
 module.exports = mongoose.model("staff", Staff);
