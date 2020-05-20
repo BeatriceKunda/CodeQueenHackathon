@@ -1,12 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const dotenv = require("dotenv");
 
 const driverRouter = require("./routes/drivers")
 const recruiterRouter = require("./routes/recruiters")
 
+// load all environment variables in the .env file
+dotenv.config({ path: './.env' });
+
 const app = express();
 const port = process.env.PORT || 3000;
+
 
 // ----- MIDDLEWARE -----
 app.use(morgan("combined"));
