@@ -1,0 +1,19 @@
+#success_message{ display: none;}
+.btn{
+   background-color:#e3810c;
+}
+
+body{
+    background-color: rgb(227, 230, 229); 
+}
+.icon {
+  padding: 10px;
+  background:orange;
+  color: white;
+  min-width: 40px;
+  text-align: center;
+}
+img{
+    margin-left: 0;
+    height: 30px;
+}
