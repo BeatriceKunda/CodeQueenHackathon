@@ -1,14 +1,18 @@
 #success_message{ display: none;}
 .btn{
-   background-color:#e3810c;
+   background-color:#ff8800;
 }
 
 body{
     background-color: rgb(227, 230, 229); 
+    
+}
+.button{
+  padding-left:3px;
 }
 .icon {
   padding: 10px;
-  background:orange;
+  background:#ff8800;
   color: white;
   min-width: 40px;
   text-align: center;
@@ -16,4 +20,15 @@ body{
 img{
     margin-left: 0;
     height: 30px;
+}
+ #register{
+ width: 700px;
+ 
+  
+} 
+.card-body{
+  padding-left:30px;
+}
+#driver{
+  width: 800px;
 }
