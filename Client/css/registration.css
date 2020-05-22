@@ -1,6 +1,7 @@
 #success_message{ display: none;}
 .btn{
    background-color:#ff8800;
+   ;
 }
 
 body{
@@ -9,6 +10,7 @@ body{
 }
 .button{
   padding-left:3px;
+  margin-top: 30px;
 }
 .icon {
   padding: 10px;
@@ -19,16 +21,20 @@ body{
 }
 img{
     margin-left: 0;
-    height: 30px;
+    height: 40px;
 }
- #register{
+ /* #register{
  width: 700px;
- 
+  */
   
 } 
+input{
+  padding-left: 20px;
+  width: 100px;
+}
 .card-body{
-  padding-left:30px;
+  padding:30px;
 }
-#driver{
-  width: 800px;
-}
+/* #driver{
+  width:;
+} */

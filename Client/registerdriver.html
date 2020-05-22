@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="js/login.js"></script>
-    <link rel="stylesheet" href="css/login.css">
+    <script src="js/registration.js"></script>
+    <link rel="stylesheet" href="css/registration.css">
     <title>Document</title>
 </head>
 
@@ -18,28 +18,30 @@
         <div class="container" id="driver">
             <div class="card ">
                 <div class="card-body">
-                    <img style="float: left;" src="images/safe3logo.png" alt="logo">
+                    
 
 
-                    <form action="" method="post" id="contact_form">
+                    <form class="form-horizontal" action="" method="post" id="contact_form">
                         <fieldset>
 
                             <!-- Form Name -->
-                            <legend>
+                            
                                 <center>
+                            <img  src="images/safe3logo.png" alt="logo">
+
                                     <h2><b>Driver Registration <Form></Form></b></h2>
                                 </center>
-                            </legend><br>
+                            <br>
 
                             <!-- Text input-->
 
                             <div class="form-group row">
                                 <label class="col-md-4 control-label">Diver Name:</label>
-                                <i class="fa fa-user icon"></i>
 
-                                <div class="col-md-4 inputGroupContainer">
+
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
-
+                                        <i class="fa fa-user icon"></i>
                                         <input name="name" placeholder="Driver name" class="form-control" type="text">
                                     </div>
                                 </div>
@@ -49,10 +51,10 @@
 
                             <div class="form-group row">
                                 <label class="col-md-4 control-label">Boda stage address:</label>
-                                <i class="fa fa-building icon"></i>
 
-                                <div class="col-md-4 inputGroupContainer">
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
+                                <i class="fa fa-building icon"></i>
 
                                         <input name="boda_stage" placeholder="Boda stage addres" class="form-control"
                                             type="text">
@@ -65,11 +67,11 @@
                             <!-- Text input-->
 
                             <div class="form-group row">
-                                <label class="col-md-4 control-label">Age:</label>
-                                <i class="fa fa-child icon"></i>
+                                <label class="col-md-4 control-label ">Age:</label>
 
-                                <div class="col-md-4 inputGroupContainer">
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
+                                <i class="fa fa-child icon"></i>
 
                                         <input name="Age" placeholder="Age" class="form-control" type="number">
                                     </div>
@@ -80,10 +82,10 @@
 
                             <div class="form-group row">
                                 <label class="col-md-4 control-label">Recruitment date:</label>
-                                <i class="fa fa-calendar icon"></i>
 
-                                <div class="col-md-4 inputGroupContainer">
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
+                                <i class="fa fa-calendar icon"></i>
 
                                         <input name="date" placeholder="Date" class="form-control" type="date">
                                     </div>
@@ -94,9 +96,9 @@
 
                             <div class="form-group row">
                                 <label class="col-md-4 control-label">Recruitment station:</label>
-                                <i class="fa fa-building icon"></i>
-                                <div class="col-md-4 inputGroupContainer">
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
+                                <i class="fa fa-building icon"></i>
 
                                         <input name="station" placeholder="station/address" class="form-control"
                                             type="text">
@@ -107,10 +109,25 @@
 
                             <!-- Text input-->
                             <div class="form-group row">
-                                <label class="col-md-4 control-label">Next of kin name:</label>
-                                <i class="fa fa-user icon"></i>
-                                <div class="col-md-4 inputGroupContainer">
+                                <label class="col-md-4 control-label">Recruiter name:</label>
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
+                                <i class="fa fa-user icon"></i>
+                                        
+                                        <input name="name" placeholder="Recruiter name" class="form-control"
+                                            type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Text input-->
+                            <!-- Text input-->
+                            <div class="form-group row">
+                                <label class="col-md-4 control-label">Next of kin name:</label>
+                                <div class="col-md-6 inputGroupContainer">
+                                    <div class="input-group">
+                                <i class="fa fa-user icon"></i>
 
                                         <input name="name" placeholder="Next of kin name" class="form-control"
                                             type="text">
@@ -120,27 +137,12 @@
 
 
                             <!-- Text input-->
-                            <!-- Text input-->
+
                             <div class="form-group row">
-                                <label class="col-md-4 control-label">E-Mail:</label>
-                                <i class="fa fa-envelope icon"></i>
-                                <div class="col-md-4 inputGroupContainer">
+                                <label class="col-md-4 control-label"> Next of kin contact No:</label>
+                                <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
-
-                                        <input name="email" placeholder="E-Mail Address" class="form-control"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <!-- Text input-->
-
-                            <div class="form-group row">
-                                <label class="col-md-4 control-label"> Next of kin contact No.:</label>
                                 <i class="fa fa-phone icon"></i>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
 
                                         <input name="contact_no" placeholder="(256+)" class="form-control" type="text">
                                     </div>
