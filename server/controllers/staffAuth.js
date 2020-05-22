@@ -1,7 +1,6 @@
 const Staff = require("../models/staff");
-const jwt = require("jsonwebtoken");
 
-const login = async (req, res, next) => {
+const login = async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -15,13 +14,8 @@ const login = async (req, res, next) => {
         return res.status(401).json({ message: "Incorrect Email or Password!" })
     }
 
-    // sign a token (JWT)
-    const token = jwt.sign(
-        { id: staff._id },
-        process.env.JWT_SECRET, {
-        expiresIn: process.env.JWT_EXPIRES_IN,
-        issuer: process.env.JWT_ISSUER
-    });
+    // issue a token (JWT)
+    const token = await staff.generateAuthToken();
     staff.password = undefined; // take the password out of the return staff object
     res.status(200).json({ message: "Successful Login", token, staff });
 }
