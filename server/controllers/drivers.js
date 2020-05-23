@@ -11,8 +11,8 @@ const addNewDriver = async (req, res) => {
         const driver = await Drivers.create(req.body);
         res.status(201).json({ message: "success", driver });
     } catch (error) {
-        console.log(error);
-        res.status(400).error(error);
+        // console.log(error);
+        res.status(400).json({error: error.message});
     }
 }
 
@@ -32,7 +32,7 @@ const editDriverDetails = async (req, res) => {
         const driver = await Drivers.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json({ message: "successfully updated driver", driver });
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(404).json({ message: "Could not update that ID as it is not Found" });
     }
 }
@@ -42,7 +42,7 @@ const deleteDriver = async (req, res) => {
         const driver = await Drivers.findByIdAndDelete(req.params.id);
         res.status(204).json({ message: "successfully removed Driver from database" });
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(404).json({ message: "No Driver found with that ID" })
     }
 }

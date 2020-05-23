@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const validator = require("validator");
 
 const Driver = new Schema({
     name: { type: String, required: true },
@@ -37,7 +38,6 @@ const Driver = new Schema({
     photo: String,
     email: {
         type: String,
-        required: [true, "Please provide an email"],
         unique: true,
         lowercase: true,
         validate: [validator.isEmail, "Please provide a valid Email"]
