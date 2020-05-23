@@ -13,7 +13,16 @@ const Driver = new Schema({
     nextOfKin: { type: String, required: true },
     nextOfKinContact: { type: String, required: true },
     photo: String,
-    email: String
+    email: String,
+    onBoardingStage: {
+        type: String,
+        enum: ["registered", "inTraining", "readyForActivation"],
+        default: "registered"
+    },
+    registeredOn: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 module.exports = mongoose.model("Driver", Driver);
