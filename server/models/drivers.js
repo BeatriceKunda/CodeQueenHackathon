@@ -38,7 +38,6 @@ const Driver = new Schema({
     photo: String,
     email: {
         type: String,
-        unique: true,
         lowercase: true,
         validate: [validator.isEmail, "Please provide a valid Email"]
     },
