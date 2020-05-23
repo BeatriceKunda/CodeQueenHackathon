@@ -69,8 +69,8 @@ Staff.pre("save", async function (next) {
     next();
 });
 
-Staff.methods.isPasswordCorrect = async function (paspasswordToCheck, savedPassword) {
-    return await bcrypt.compare(paspasswordToCheck, savedPassword);
+Staff.methods.isPasswordCorrect = async function (passwordToCheck, savedPassword) {
+    return await bcrypt.compare(passwordToCheck, savedPassword);
 };
 
 Staff.methods.generateAuthToken = async function () {

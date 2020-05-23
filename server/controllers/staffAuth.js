@@ -1,7 +1,7 @@
 const Staff = require("../models/staff");
 
 const login = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password } = req.body; // object destructuring
 
     if (!email || !password) {
         return res.status(400).send({ message: "please provide both email and password!" })
@@ -20,6 +20,13 @@ const login = async (req, res) => {
     res.status(200).json({ message: "Successful Login", token, staff });
 }
 
+const getMe = () => {
+    return (req, res, next) => {
+        req.params.id = req.staff.id;
+        next();
+    }
+}
+
 const logout = async (req, res) => {
     try {
         // remove the token from the collection of the user's tokens
@@ -33,7 +40,6 @@ const logout = async (req, res) => {
     }
 }
 
-
 const logoutAll = async (req, res) => {
     // Log staff out of all devices
     try {
@@ -45,8 +51,25 @@ const logoutAll = async (req, res) => {
     }
 }
 
+// middleware to restrict routes based on the role of the staff member
+const restrictTo = (...roles) => {
+    return (req, res, next) => {
+        try {
+            if (roles.includes(req.staff.role)) {
+                next(); // you are authorized to perform this action hence call the next middleware
+            } else {
+                return res.status(403).json({ message: "you are not authorized to perform this action" });
+            }
+        } catch (error) {
+            return res.status(500).json({ message: "could not understand your level of permission. please contact the server maintenance team" });
+        }
+    }
+}
+
 module.exports = {
     login,
     logout,
-    logoutAll
+    logoutAll,
+    restrictTo,
+    getMe
 }

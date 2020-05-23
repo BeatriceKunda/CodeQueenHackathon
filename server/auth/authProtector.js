@@ -3,7 +3,14 @@ const Staff = require('../models/staff')
 
 module.exports = () => {
     return async (req, res, next) => {
-        const token = req.header('Authorization').replace('Bearer ', '');
+        let token;
+        if (req.headers.authorization) {
+            token = req.header('Authorization').replace('Bearer ', '');
+        } else {
+            return res.status(400).json({ message: "You must provide a token" });
+        }
+
+
         let data;
         try {
             data = jwt.verify(token, process.env.JWT_SECRET);
@@ -17,6 +24,7 @@ module.exports = () => {
             if (!staff) {
                 throw new Error();
             }
+            // make sure you attach the staff and token objects
             req.staff = staff;
             req.token = token;
             next(); // proceed after login
