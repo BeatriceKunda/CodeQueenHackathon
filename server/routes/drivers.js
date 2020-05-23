@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const driverController = require("../controllers/drivers");
 const authProtector = require("../auth/authProtector");
+const staffAuthControllers = require("../controllers/staffAuth");
 
 // DRIVERS REST API Architecture for the ROUTING PATHS
 // 1. Get All drivers in our database                         =>  '/driver' - GET
@@ -12,14 +13,10 @@ const authProtector = require("../auth/authProtector");
 
 router.use(authProtector()); // every route  below this needs someone to be logged in
 
-router.get("/", driverController.getAllDrivers);
-
-router.post("/", driverController.addNewDriver);
-
-router.get("/:id", driverController.getSpecificDriver);
-
-router.patch("/:id", driverController.editDriverDetails);
-
-router.delete("/:id", driverController.deleteDriver);
+router.get("/", staffAuthControllers.restrictTo('admin'), driverController.getAllDrivers);
+router.post("/", staffAuthControllers.restrictTo('admin', 'recruiter'), driverController.addNewDriver);
+router.get("/:id", staffAuthControllers.restrictTo('admin'), driverController.getSpecificDriver);
+router.patch("/:id", staffAuthControllers.restrictTo('admin'), driverController.editDriverDetails);
+router.delete("/:id", staffAuthControllers.restrictTo('admin'), driverController.deleteDriver);
 
 module.exports = router;

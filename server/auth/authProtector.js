@@ -24,6 +24,7 @@ module.exports = () => {
             if (!staff) {
                 throw new Error();
             }
+            // make sure you attach the staff and token objects
             req.staff = staff;
             req.token = token;
             next(); // proceed after login
