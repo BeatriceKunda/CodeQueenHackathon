@@ -16,6 +16,9 @@ router.post("/login", staffAuthControllers.login);
 
 router.use(authProtector()); // every route  below this needs someone to be logged in
 
+router.get('/me', staffAuthControllers.getMe(), staffControllers.getSpecificStaffDetails); // get details of whoever is logged in
+// TODO: Add functionality to edit details of whoever is logged in (router.patch('updateMe', ***))
+
 router.get("/logout", staffAuthControllers.logout);
 router.get("/logoutAll", staffAuthControllers.logoutAll);
 

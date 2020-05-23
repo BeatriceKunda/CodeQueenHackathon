@@ -20,6 +20,13 @@ const login = async (req, res) => {
     res.status(200).json({ message: "Successful Login", token, staff });
 }
 
+const getMe = () => {
+    return (req, res, next) => {
+        req.params.id = req.staff.id;
+        next();
+    }
+}
+
 const logout = async (req, res) => {
     try {
         // remove the token from the collection of the user's tokens
@@ -32,7 +39,6 @@ const logout = async (req, res) => {
         res.status(500).send(error);
     }
 }
-
 
 const logoutAll = async (req, res) => {
     // Log staff out of all devices
@@ -64,5 +70,6 @@ module.exports = {
     login,
     logout,
     logoutAll,
-    restrictTo
+    restrictTo,
+    getMe
 }
