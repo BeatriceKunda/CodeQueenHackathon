@@ -3,20 +3,30 @@
 /* Style the input container */
 .input-container {
   display: flex;
-  width: ;
+  width:300px ;
   margin-bottom: 15px;
 }
+/* @media (min-width: 576px),
+
+@media (min-width: 768px) ,
+
+/* // Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) */
+/* // Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1200px)
+{
 body{
     background-color: rgb(227, 230, 229); 
-}
+}}
 .card{
     margin: auto;
-    width:500px;
+    width:300px;
       
     
 }
 
-/* Style the form icons */
+
+
 .icon {
   padding: 10px;
   background:#ff8800;
@@ -27,7 +37,7 @@ body{
 
 /* Style the input fields */
 .input-field {
-  width: 100%;
+  /* width: 100%; */
   padding: 10px;
   outline: none;
 }
