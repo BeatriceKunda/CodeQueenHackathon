@@ -8,11 +8,15 @@ const getAllDrivers = async (req, res) => {
 const addNewDriver = async (req, res) => {
     // console.log(req.body);
     try {
+        req.body.recruitedBy = req.staff._id; // add the recruitedBy field to the req body
         const driver = await Drivers.create(req.body);
+        const staff = req.staff;
+        staff.drivers.push(driver._id);
+        staff.save({ validateBeforeSave: false });
         res.status(201).json({ message: "success", driver });
     } catch (error) {
         // console.log(error);
-        res.status(400).json({error: error.message});
+        res.status(400).json({ error: error.message });
     }
 }
 

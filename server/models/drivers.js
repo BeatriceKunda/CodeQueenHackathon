@@ -20,6 +20,7 @@ const Driver = new Schema({
         }
     },
     recruitedOn: { type: Date, required: true, default: Date.now },
+    recruitedBy: { type: mongoose.Schema.Types.ObjectId, ref: "staff" },
     recruitmentAddr: { type: String, required: true },
     referredBy: { type: String },
     nextOfKin: { type: String, required: true },
