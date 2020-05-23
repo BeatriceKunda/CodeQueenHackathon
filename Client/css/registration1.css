@@ -16,11 +16,14 @@
  @media (min-width: 1200px)
 {
 body{
-    background-color: rgb(227, 230, 229); 
-}}
+    background-color:  rgb(227, 230, 229);
+}
+}
 .card{
     margin: auto;
     width:300px;
+  
+    /* background-color:  rgb(227, 230, 229); */
       
     
 }
