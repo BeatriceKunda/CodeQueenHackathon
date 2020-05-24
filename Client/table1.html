@@ -11,6 +11,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/pie.js"></script>
     <script src="js/line.js"></script>
+    <script src="/Client/js/table.js"></script>
     <title>Dashboard</title>
 </head>
 
@@ -18,17 +19,17 @@
     <div id="container-fluid">
         <div id="sideMenu">
             <img src="images/logo.png" alt="">
-        
+
             <ul class="menu">
                 <a href="dashboard.html">
                     <li>Dashboard</li>
                 </a>
-        
+
             </ul>
             <ul class="menu"><a href="registerrecruter.html">
                     <li>Register recruiter</li>
                 </a></ul>
-        
+
             <ul class="menu">
                 <li id="cat">Categories</li>
                 <a href="table1.html">
@@ -56,13 +57,20 @@
 
 
                 <div class="content  table-full-width">
-                    <table class="table table-hover table-striped">
-                        <thead>
+                    <table class="table table-hover" id="table" data-toggle="table" data-search="true"
+                        data-filter-control="true" data-show-export="true" data-click-to-select="true"
+                        data-toolbar="#toolbar">
+                        <h3>Registered Drivers</h3><button class="btn btn-warning "onclick="exportTableToExcel('table', 'members-data')"><i class="fa fa-download"></i></button>
 
-                            <th>Name</th>
-                            <th>Stage address</th>
-                            <th>Contact</th>
-                            <th>Action</th>
+                        <thead>
+                            <tr>
+                                <th data-field="name" data-checkbox="true">Name</th>
+                                <th data-field="Id" data-filter-control="input" data-sortable="true">stage</th>
+                                <th data-field="phone number" data-filter-control="select" data-sortable="true">phone number</th>
+                                <th data-field="Action" data-filter-control="select" data-sortable="true">Action
+                                </th>
+                                <!-- <th data-field="" data-sortable="true"></th> -->
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>
