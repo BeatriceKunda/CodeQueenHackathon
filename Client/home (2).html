@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/home.css">
-
     <title>Document</title>
 </head>
 
@@ -16,36 +15,29 @@
     background-size: cover;
 
 ">
+    <img src="images/logo.png" alt="">
+
     <div class="container">
         <div class="row">
-            <div class="col ml-0">
-<img src="images/logo.png" alt="">
-
-            </div>
-        </div>
-        
-        <div class="row justify-content-center align-items-center mt-0 pt-0" style="height:100vh;">
-            
-            <div class="col col-10 col-sm-7 col-md-4 col-xl-3">
-                
-                <form action="POST=>dashbod">
-                    <div class="form-group">
+            <div class="col">
+            <div class="box">
+                <h2>Login</h2>
+                <form>
+                    <div class="inputBox">
                         <input type="text" name="name" required onkeyup="this.setAttribute('value', this.value);"
                             value="">
                         <label>Username</label>
                     </div>
-                    <div class="form-group">
+                    <div class="inputBox">
                         <input type="password" name="password" required value=""
                             onkeyup="this.setAttribute('value', this.value);" pattern="(?=.*[a-z]).{8,}"
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                         <label>Password</label>
                     </div>
-                    <div class="checkbox">
-                        <label style="color: #fff;"><input type="checkbox" > Remember me</label>
-                    </div>
-                <input type="submit" name="sign-in" value="Login">
+                    <input type="submit" name="sign-in" value="Login">
                 </form>
             </div>
+        </div>
         </div>
     </div>
 </body>

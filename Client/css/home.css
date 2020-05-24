@@ -4,34 +4,38 @@ body {
   background-size: cover;
   font-family: sans-serif;
 }
+html{
+    margin: 0;
+}
 img{
     float: left;
     padding: 20px;
+    background-repeat: no-repeat;
 }
-.box {
+form {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 25rem;
+  width: 100%;
   padding: 2.5rem;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 0.625rem;
 }
 
-.box h2 {
+form h2 {
   margin: 0 0 1.875rem;
   padding: 0;
   color: #fff;
   text-align: center;
 }
 
-.box .inputBox {
+form .form-group {
   position: relative;
 }
 
-.box .inputBox input {
+form .form-group input {
   width: 100%;
   padding: 0.625rem 0;
   font-size: 1rem;
@@ -44,7 +48,7 @@ img{
   background: transparent;
 }
 
-.box .inputBox label {
+form .form-group label {
   position: absolute;
   top: 0;
   left: 0;
@@ -55,16 +59,16 @@ img{
   transition: 0.5s;
 }
 
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label,
-.box .inputBox input:not([value=""]) ~ label {
+form .form-group input:focus ~ label,
+form .form-group input:valid ~ label,
+form .form-group input:not([value=""]) ~ label {
   top: -1.125rem;
   left: 0;
   color: #ff8800;
   font-size: 0.75rem;
 }
 
-.box input[type="submit"] {
+input[type="submit"] {
   border: none;
   outline: none;
   color: #fff;
@@ -75,6 +79,6 @@ img{
   font-size: 1rem;
 }
 
-.box input[type="submit"]:hover {
+ input[type="submit"]:hover {
   background-color: #ff8800;
 }
