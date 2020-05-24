@@ -1,6 +1,8 @@
 * {box-sizing: border-box;}
 body{
   margin:0;
+   background-color: rgb(227, 230, 229); 
+    
   /* padding: 0; */
 }
 
@@ -26,6 +28,7 @@ body{
 .card{
     margin: auto;
     /* width:300px; */
+    width: 120%;
   
     /* background-color:  rgb(227, 230, 229); */
       

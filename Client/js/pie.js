@@ -7,9 +7,9 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
   ['Task', 'percentage'],
-  ['regitered', 60],
-  ['actiated', 20],
-  ['training', 20],
+  ['Regitered', 60],
+  ['Activated', 20],
+  ['Training', 20],
   
 ]);
 

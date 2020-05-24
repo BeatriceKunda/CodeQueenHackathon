@@ -23,7 +23,7 @@ function drawChart() {
 
 
     var options = {
-        title: 'Progress of the day',
+        title: 'PROGRESS OF THE DAY',
         width: 400,
         height: 300,
         hAxis: {
