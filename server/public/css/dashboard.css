@@ -1,0 +1,277 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+html {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+body {
+  height: 100%;
+  margin: 0;
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+* {
+  box-sizing: border-box;
+}
+
+.dropbtn {
+
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+th {
+  cursor: pointer;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Side Bar */
+#sideMenu {
+  width: 5%;
+  height: 100%;
+  padding: 30px;
+  border-right: 2px solid #111;
+  display: table-cell;
+  vertical-align: top;
+  color: #fff;
+
+}
+.menu {
+  list-style: none;
+  margin:  24px 0;
+  padding: 0;
+}
+#image{
+  margin: auto;
+  width:100px
+}
+p{
+  font-size: 20px;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.menu li {
+  display: block;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  position: relative;
+}
+.menu li:hover {
+  color: #ff8800;
+}
+/* .menu li:first-child {
+  height: 45px;
+  line-height: 35px;
+  font-size: 16px;
+  font-weight: 500;
+  color:#111;
+  list-style-type: none;
+} */
+
+#user{
+  background-color: #ff8800;
+}
+
+
+ .card{
+   width:100% ;
+ }
+/* Content */
+#content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: table-cell;
+}
+#titleBar {
+  padding: 10px;
+  height: 49px;
+  margin-bottom: 30px;
+  background-color: #fc9b16;
+}
+#profilePic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #999;
+  float: right;
+  margin-top: -8px;
+  margin-left: 14px;
+  overflow: hidden;
+}
+#profilePic img {
+  width: 100%;
+}
+th{
+  /* font-size: 70px; */
+}
+.controls {
+  display: block;
+  width: 70px;
+  height: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  float: right;
+  border-radius: 20px;
+}
+.activeControl {
+  background: rgba(255, 255, 255, 0.9);
+  color: #202b33;
+  font-weight: 600;
+}
+
+#salesData {
+  margin-bottom: 60px;
+}
+
+.colorIcon {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0; bottom: 0; right: 2%;
+  margin: auto;
+}
+.plus {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: #202b33;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 8px;
+  padding: 4px;
+  margin-right: 6px;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .2);
+}
+.red {
+  background: #ec1561;
+}
+.orange {
+  background: #ff9939;
+}
+.bluee {
+  background:blue;
+}
+
+/* Table */
+@media (min-width: 992px) {
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+        overflow: visible;
+}}
+th {
+  
+  cursor: pointer;
+
+
+  text-align: center;
+  color: black;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 10px;
+  padding-bottom: 14px;
+}
+tr:not(:first-child):hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+td {
+  text-align: center;
+  height: 20px;
+  line-height: 15px;
+  font-weight: 400;
+  color: black;
+  /* padding: 0 0px; */
+}
+/* Headers */
+h1 {
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+h2 {
+  float: left;
+  font-size: 19px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0;
+  color: white;
+}
+h3 {
+  text-align: center;
+  color: #111;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: ;
+  margin-left: 20px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.clearFix {
+  clear: both;
+}
+

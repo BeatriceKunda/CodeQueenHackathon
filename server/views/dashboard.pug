@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+html(lang="en")
+
+head 
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous")
+    link(rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="/css/dashboard.css")
+    link(rel="stylesheet" href="/css/styles.css")
+    script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+    script(src="/js/pie.js")
+    script(src="/js/line.js")
+    script(src="/js/table.js")
+    title Dashboard | Safe Boda Registration
+
+body
+    #sideMenu
+        img(src="/images/logo.png" alt="logo")
+        ul.menu
+            a(href="/dashboard")
+                li Dashboard
+        ul.dropdown.menu
+            li Registrations
+            .dropdown-content
+                a(href="register-driver") Register Driver
+                a(href="register-recruiter") Register Recruiter
+        ul.dropdown.menu
+            li Onboarding Stages
+            .dropdown-content
+                a(href="#") Registered Drivers
+                a(href="#") In Training
+                a(href="#") Ready For Activation
+        ul.menu
+            a.logout.logout-btn
+                li Logout
+    #content
+        #titleBar
+                h2 Dashboard
+                #profilePic
+                    img(src="/images/admin.png")
+                a.controls(href="dashboard")
+                    span Weekly
+                a.controls(href="#")
+                    span Daily
+        .mainChart
+            .container
+                .row
+                    .col-lg-6
+                        #piechart
+                    .col-lg-6
+                        #bar
+            .content.table-full-width
+                table.table.table-hover.table-striped#t
+                    h3 Number of Drivers Registered byper recruiter
+                    thead
+                        th ID
+                        th Name
+                        th Phone Number
+                        th Registered Drivers
+                            button.btn.btn-warning(type="button")
+                                i.fa.fa-download
+                        tbody
+                            each recruiter in staff
+                                tr
+                                    td= `${recruiter._id.toString().slice(-4)}`
+                                    td= `${recruiter.lastName} ${recruiter.firstName}`
+                                    td= recruiter.phoneNumber
+                                    td= recruiter.drivers.length
+
+script(src="bootstrap-4.4.1-dist/js/bootstrap.min.js")
+script(src="/js/login.js")

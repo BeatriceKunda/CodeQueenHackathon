@@ -1,22 +1,33 @@
 const Staff = require("../models/staff");
 
 const login = async (req, res) => {
-    const { email, password } = req.body; // object destructuring
+    const { username, password } = req.body; // object destructuring
 
-    if (!email || !password) {
-        return res.status(400).send({ message: "please provide both email and password!" })
+    if (!username || !password) {
+        return res.status(400).send({ message: "please provide both username and password!" })
     }
 
-    const staff = await Staff.findOne({ email }).select('+password');
+    const staff = await Staff.findOne({ username }).select('+password');
 
     // compare and see if the passwords match
     if (!staff || !(await staff.isPasswordCorrect(password, staff.password))) {
-        return res.status(401).json({ message: "Incorrect Email or Password!" })
+        return res.status(401).json({ message: "Incorrect Username or Password!" })
     }
 
     // issue a token (JWT)
     const token = await staff.generateAuthToken();
-    staff.password = undefined; // take the password out of the return staff object
+
+    // generate and issue a cookie
+    const cookieOptions = {
+        expires: new Date(
+            Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+        ),
+        httpOnly: true
+    };
+    if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+    res.cookie('jwt', token, cookieOptions);
+
+    staff.password = undefined; // take the password out of the return staff object output
     res.status(200).json({ message: "Successful Login", token, staff });
 }
 
@@ -34,6 +45,11 @@ const logout = async (req, res) => {
             return token.token != req.token;
         })
         await req.staff.save({ validateBeforeSave: false });
+        // logout cookie by sending a dummy one that expires shortly
+        res.cookie('jwt', 'loggedout', {
+            expires: new Date(Date.now() + 10 * 1000),
+            httpOnly: true
+        });
         res.status(200).send({ message: "logout success" });
     } catch (error) {
         res.status(500).send(error);

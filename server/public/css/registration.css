@@ -1,0 +1,41 @@
+#success_message{ display: none;}
+.btn{
+   background-color:#ff8800;
+   ;
+}
+
+body{
+    background-color: rgb(227, 230, 229); 
+    
+}
+
+.button{
+  padding-left:3px;
+  margin-top: 30px;
+}
+.icon {
+  padding: 10px;
+  background:#ff8800;
+  color: white;
+  min-width: 40px;
+  text-align: center;
+}
+img{
+    margin-left: 0;
+    height: 40px;
+}
+ /* #register{
+ width: 700px;
+  */
+  
+} 
+input{
+  padding-left: 20px;
+  width: 100px;
+}
+.card-body{
+  padding:30px;
+}
+/* #driver{
+  width:;
+} */
