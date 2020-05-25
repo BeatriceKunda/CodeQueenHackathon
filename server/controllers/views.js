@@ -12,6 +12,10 @@ const registerDriver = (req, res) => {
     res.status(200).render('registerDriver');
 }
 
+const registerRecruiter = (req, res) => {
+    res.status(200).render('registerRecruiter');
+}
+
 const dashboard = async (req, res) => {
     const staff = await Staff.find({ role: 'recruiter' });
     res.status(200).render('dashboard', { staff });
@@ -45,4 +49,4 @@ const isLoggedIn = async (req, res, next) => {
 };
 
 
-module.exports = { login, registerDriver, dashboard, isLoggedIn }
+module.exports = { login, registerDriver, dashboard, isLoggedIn, registerRecruiter }

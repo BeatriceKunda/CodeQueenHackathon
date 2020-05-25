@@ -11,13 +11,14 @@ head
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     script(src="js/registration.js")
     link(rel="stylesheet" href="/css/registration.css")
+    link(rel="stylesheet" href="/css/styles.css")
     title Register Driver | Safe Boda Registration
 
 body
     .container#driver
         .card
             .card-body
-                form.form-horizontal#contact_form
+                form.form-horizontal#contact_form.register-driver
                     fieldset
                         center
                             img(src="images/safe3logo.png" alt="logo")
@@ -28,55 +29,55 @@ body
                             .col-md-6.inputGroupContainer
                                 .input-group
                                     i.fa.fa-user.icon
-                                    input.form-control(name="name", placeholder="Driver's Name", type="text")
+                                    input.form-control(name="name", placeholder="Driver's Name", type="text", id="name")
                         .form-group.row
                             label.col-md-4.control-label Boda stage address:
                             .col-md-6.inputGroupContainer
                                 .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="stage", placeholder="Boda stage Address", type="text")
+                                    i.fa.fa-road.icon
+                                    input.form-control(name="stage", placeholder="Boda stage Address", type="text", id="stage")
                         .form-group.row
-                            label.col-md-4.control-label Age:
+                            label.col-md-4.control-label National ID Number:
                             .col-md-6.inputGroupContainer
                                 .input-group
                                     i.fa.fa-building.icon
-                                    input.form-control(name="age", placeholder="Driver's Age", type="number")
-                        .form-group.row
-                            label.col-md-4.control-label Recruitment date:
-                            .col-md-6.inputGroupContainer
-                                .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="recruitmentDate", placeholder="date of recruitment", type="date")
-                        .form-group.row
-                            label.col-md-4.control-label Recruitment station:
-                            .col-md-6.inputGroupContainer
-                                .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="station", placeholder="Recruitment station/address", type="text")
-                        .form-group.row
-                            label.col-md-4.control-label Referred by:
-                            .col-md-6.inputGroupContainer
-                                .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="referred by", placeholder="Referred by", type="text")
-                        .form-group.row
-                            label.col-md-4.control-label Next of Kin:
-                            .col-md-6.inputGroupContainer
-                                .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="nextOfKin", placeholder="Next of Kin", type="text")
-                        .form-group.row
-                            label.col-md-4.control-label Next of Kin Contact:
-                            .col-md-6.inputGroupContainer
-                                .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="nextOfKinContact", placeholder="Next of Kin Contact", type="text")
+                                    input.form-control(name="natIDnum", placeholder="National ID number", type="text", id="natIdNumber")            
                         .form-group.row
                             label.col-md-4.control-label Driver's Contact:
                             .col-md-6.inputGroupContainer
                                 .input-group
-                                    i.fa.fa-building.icon
-                                    input.form-control(name="number", placeholder="Driver's Contact", type="text")
+                                    i.fa.fa-phone.icon
+                                    input.form-control(name="number", placeholder="Driver's Contact", type="text", id="phoneNumber")            
+                        .form-group.row
+                            label.col-md-4.control-label Age:
+                            .col-md-6.inputGroupContainer
+                                .input-group
+                                    i.fa.fa-user.icon
+                                    input.form-control(name="age", placeholder="Driver's Age", type="number", id="age")
+                        .form-group.row
+                            label.col-md-4.control-label Recruitment station:
+                            .col-md-6.inputGroupContainer
+                                .input-group
+                                    i.fa.fa-road.icon
+                                    input.form-control(name="station", placeholder="Recruitment station/address", type="text", id="recruitmentAddr")
+                        .form-group.row
+                            label.col-md-4.control-label Referred by:
+                            .col-md-6.inputGroupContainer
+                                .input-group
+                                    i.fa.fa-user.icon
+                                    input.form-control(name="referred by", placeholder="Referred by", type="text", id="referredBy")
+                        .form-group.row
+                            label.col-md-4.control-label Next of Kin:
+                            .col-md-6.inputGroupContainer
+                                .input-group
+                                    i.fa.fa-user.icon
+                                    input.form-control(name="nextOfKin", placeholder="Next of Kin", type="text", id="nextOfKin")
+                        .form-group.row
+                            label.col-md-4.control-label Next of Kin Contact:
+                            .col-md-6.inputGroupContainer
+                                .input-group
+                                    i.fa.fa-phone.icon
+                                    input.form-control(name="nextOfKinContact", placeholder="Next of Kin Contact", type="text", id="nextOfKinContact")
                         .buton
                             button.btn(type="submit") SUBMIT
 

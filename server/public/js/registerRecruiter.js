@@ -10,20 +10,19 @@ const hideAlert = () => {
     if (el) el.parentElement.removeChild(el);
 }
 
-const registerDriver = async (name, stage, natIdNumber, age, phoneNumber, recruitmentAddr, nextOfKin, nextOfKinContact) => {
+const registerRecruiter = async (firstName, lastName, username, email, phoneNumber, password, passwordConfirm) => {
     try {
         const response = await axios({
             method: 'POST',
-            url: 'http://localhost:8000/driver',
+            url: 'http://localhost:8000/staff',
             data: {
-                name,
-                stage,
-                natIdNumber,
-                age,
+                firstName,
+                lastName,
+                username,
+                email,
                 phoneNumber,
-                recruitmentAddr,
-                nextOfKin,
-                nextOfKinContact
+                password,
+                passwordConfirm
             }
         })
         if (response.data.message === "success") {
@@ -39,20 +38,19 @@ const registerDriver = async (name, stage, natIdNumber, age, phoneNumber, recrui
 }
 
 
-var registrationForm = document.querySelector('.contact_form ');
+var registrationForm = document.querySelector('.register-recruiter');
 
 if (registrationForm) {
     registrationForm.addEventListener('submit', function (e) {
         e.preventDefault(); // prevent page from reloading
-        var name = document.getElementById('name').value;
-        var stage = document.getElementById('stage').value;
-        var natIdNumber = document.getElementById('natIdNumber').value;
-        var age = document.getElementById('age').value;
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
         var phoneNumber = document.getElementById('phoneNumber').value;
         var password = document.getElementById('password').value;
-        var nextOfKin = document.getElementById('nextOfKin').value;
-        var nextOfKinContact = document.getElementById('nextOfKinContact').value;
+        var passwordConfirm = document.getElementById('passwordConfirm').value;
 
-        registerDriver(name, stage, natIdNumber, age, phoneNumber, password, nextOfKin, nextOfKinContact); // call this to login
+        registerRecruiter(firstName, lastName, username, email, phoneNumber, password, passwordConfirm); // call this to login
     })
 }

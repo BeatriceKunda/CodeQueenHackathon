@@ -10,7 +10,7 @@ const createNewStaffMember = async (req, res) => {
         const staff = await Staff.create(req.body);
         res.status(201).json({ message: "success", staff });
     } catch (error) {
-        // console.log(error);
+        console.log(error);
         res.status(400).json({ error: error.message });
     }
 }
