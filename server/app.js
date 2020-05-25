@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const driverRouter = require("./routes/drivers")
 const staffRouter = require("./routes/staff")
@@ -16,6 +17,7 @@ const port = process.env.PORT || 3000;
 // ----- MIDDLEWARE -----
 app.use(morgan("combined"));
 app.use(express.json());
+app.use(cors());
 
 
 // ----- DATABASE -----
