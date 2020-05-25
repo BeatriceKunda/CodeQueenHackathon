@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- <link rel="stylesheet" href="css/dashbord.css"> -->
+    <link rel="stylesheet" href="css/dashbord.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/pie.js"></script>
     <script src="js/line.js"></script>
@@ -25,54 +25,77 @@
                 </a>
 
             </ul>
-            <ul class="menu"><a href="registerrecruter.html">
-                    <li>Register recruiter</li>
-                </a></ul>
+            <ul class="dropdown menu">
+                <li class="">Registrations</li>
+                <div class="dropdown-content">
+                    <a href="registerdriver.html">Register drivers</a>
+                    <a href="registerrecruter.html">Register recruiter</a>
 
-            <ul class="menu">
-                <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
                 </div>
-               
+            </ul>
+
+            <ul class="dropdown menu">
+                <li class="">Onboarding Stages</li>
+                <div class="dropdown-content">
+                    <a href="table1.html">Registered drivers</a>
+                    <a href="table2.html">In training</a>
+                    <a href="table3.html">Ready for activation</a>
+                </div>
+            </ul>
+            <ul class="menu">
+                <a href="home.html">
+                    <li>Logout</li>
+                </a>
             </ul>
         </div>
 
         <div id="content">
-            <div id="titleBar">
-                <h2>Dashboard</h2>
-                <div id="profilePic">
-                    <img src="images/admin.png" />
+            <div class="row">
+                <div class="col">
+
+
+                    <div id="titleBar">
+                        <h2>Dashboard</h2>
+                        <div id="profilePic">
+                            <img src="images/admin.png" />
+                        </div>
+                    </div>
+
+
+                    <div id="totalSales">
+                        <div class="card p-4">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <img src="images/PASS..jpg"  alt="" class="img-thumbnial" style="border: 1px solid;width: 60%; height: 200px;">
+                                    <p> <b>DRIVER STATUS</b></p>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio" checked>Registered</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">In training</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="optradio">Activated</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5 style="text-transform: uppercase; text-decoration:underline;"> Kibuuka Raymond</h5>
+                                   <p><strong>Boda Stage Adress:</strong>  Kikoni</p>
+                                <p><strong>National Identity Card Number(NIN):</strong>  UE12345T</p>
+                                <p><strong>Age:</strong>  30</p>
+                                <p><strong>Recruitment Adress:</strong>  Kasubi</p>
+                                <p><strong>Referral name:</strong>  Kibilige Richard</p>
+                                <p><strong>Next of kin name:</strong>  Kiwanuka Camilus</p>
+                                <p><strong>Next of kin contact:</strong>  0787998902</p>
+                                <p><b>Phone Number:</b>  098764543</p>
+                                <p><strong>Driver Email:</strong>  raymond@yahoo.com</p>
+                            <a href="view.html"><button class="btn " style="background-color: #ff8800;">Edit Profile</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-            <div id="totalSales">
-              <div class="wrapper">
-            <div class="dropdown show">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
-                </a>
-            
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#" style="background-color: blue;">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-              </div>
-             
-            </div>
-
         </div>
 
 
