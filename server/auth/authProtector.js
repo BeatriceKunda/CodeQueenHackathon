@@ -6,6 +6,8 @@ module.exports = () => {
         let token;
         if (req.headers.authorization) {
             token = req.header('Authorization').replace('Bearer ', '');
+        } else if (req.cookies.jwt) {
+            token = req.cookies.jwt;
         } else {
             return res.status(400).json({ message: "You must provide a token" });
         }
