@@ -17,4 +17,4 @@ $ cd server
 $ npm start
 ```
 
-2. __Frontend Client__ in order to view the client, open the views folder and run the pug files
+2. __Frontend Client__ in order to view the client, go to the server folder and open the views folder and run the pug files
