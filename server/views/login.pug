@@ -28,6 +28,8 @@ body
                         label
                             input(type="checkbox")
                             |   Remember me
+                    .hidden-url
+                        p#hidden-url= nextUrl
                     input(type="submit", name="login", value="Login")
 
 script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")

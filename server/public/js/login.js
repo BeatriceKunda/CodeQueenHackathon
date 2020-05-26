@@ -1,4 +1,3 @@
-// import { showAlert } from "./alert"
 const showAlert = (type, msg) => {
     hideAlert();
     const markup = `<div class="alert alert--${type}">${msg}</div>`;
@@ -11,7 +10,7 @@ const hideAlert = () => {
     if (el) el.parentElement.removeChild(el);
 }
 
-const login = async (username, password) => {
+const login = async (username, password, nextUrl) => {
     try {
         const response = await axios({
             method: 'POST',
@@ -21,10 +20,13 @@ const login = async (username, password) => {
         if (response.data.message === "Successful Login") {
             showAlert('success', "LoggedIn successfully");
             let path;
-            if (response.data.staff.role === 'admin') path = "dashboard";
-            else if (response.data.staff.role === 'recruiter') path = "register-driver";
+            if (nextUrl === "") {
+                if (response.data.staff.role === 'admin') path = "/dashboard";
+                else if (response.data.staff.role === 'recruiter') path = "/register-driver";
+            } else path = nextUrl
+            console.log(`path: ${path}`);
             window.setTimeout(() => {
-                location.assign(`/${path}`);
+                location.assign(`${path}`);
             }, 1500)
         }
     } catch (error) {
@@ -39,23 +41,31 @@ const logout = async () => {
             method: 'GET',
             url: 'http://localhost:8000/staff/logout'
         });
-        if ((res.data.message = 'logout success')) location.assign('/login');
-    } catch (err) {
-        console.log(err.response);
-        showAlert('error', 'Error logging out! Try again.');
+        if ((res.data.message = 'logout success')) {
+            window.setTimeout(() => {
+                location.assign('/login');
+            }, 1500)
+        }
+    } catch (error) {
+        showAlert('error', error.response.data.message);
     }
 };
 
 
 var loginForm = document.querySelector('.login-form');
 var logoutButton = document.querySelector('.logout-btn');
+var nextUrl = document.getElementById('.hidden-url');
 
 if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault(); // prevent page from reloading
+        let url = "";
+        if (nextUrl)
+            url = nextUrl;
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        login(username, password); // call this to login
+
+        login(username, password, url); // call this to login
     })
 }
 

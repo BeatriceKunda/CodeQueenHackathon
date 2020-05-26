@@ -9,6 +9,12 @@ body{
     
 }
 
+.buton button{
+  float: none;
+  display: block;
+  margin: 0 auto;
+}
+
 .button{
   padding-left:3px;
   margin-top: 30px;
@@ -28,7 +34,7 @@ img{
  width: 700px;
   */
   
-} 
+/* }  */
 input{
   padding-left: 20px;
   width: 100px;

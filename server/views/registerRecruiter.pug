@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+html(lang="en")
+
+head 
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="/css/registration1.css")
+    link(rel="stylesheet" href="/css/styles.css")
+    title Recruiter Reg | Safe Boda Registration
+    style(type='text/css').
+        #back {
+            background-color: #ff8800;
+        }
+
+body
+    .container
+        .row.justify-content-center.align-items-center
+            .col.col-10.col-sm-6.col-md-4.col-xl-3
+                a(href="#")
+                    button#back
+                        i.fa.fa-arrow-circle-left
+                .card
+                    img(src="/images/safe3logo.png", alt="logo")
+                    .card-body
+                        center
+                            h3 Register Recruiter
+                        form.form.register-recruiter
+                            .form-group
+                                .input-container
+                                    i.fa.fa-user.icon
+                                    input.input-field(type="text", placeholder="First Name", name="firstName", id="firstName")
+                            .form-group
+                                .input-container
+                                    i.fa.fa-user.icon
+                                    input.input-field(type="text", placeholder="Last Name", name="lastName", id="lastName")
+                            .form-group
+                                .input-container
+                                    i.fa.fa-user.icon
+                                    input.input-field(type="text", placeholder="User Name", name="username", id="username")
+                            .form-group
+                                .input-container
+                                    i.fa.fa-phone.icon
+                                    input.input-field(type="text", placeholder="Phone Number", name="phoneNumber", id="phoneNumber")
+                            .form-group
+                                .input-container
+                                    i.fa.fa-envelope.icon
+                                    input.input-field(type="text", placeholder="Email", name="email", id="email")
+                            .form-group
+                                .input-container
+                                    i.fa.fa-key.icon
+                                    input.input-field(type="password", placeholder="Password", name="password", id="password")
+                            .form-group
+                                .input-container
+                                    i.fa.fa-key.icon
+                                    input.input-field(type="password", placeholder="Confirm Password", name="passwordConfirm", id="passwordConfirm")
+                            center
+                                input.btn(type="submit", value="Register")
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+script(src="/js/registerRecruiter.js")

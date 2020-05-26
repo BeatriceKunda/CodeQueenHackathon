@@ -27,6 +27,7 @@ app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
+app.disable('etag');
 
 
 // ----- DATABASE -----
