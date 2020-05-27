@@ -1,0 +1,103 @@
+[
+  {
+    "_id": "5c8a20d32f8fb814b56fa187",
+    "name": "Mukibi Ronald",
+    "stage": "Wandegeya",
+    "natIdNumber": "CM2134QWE90UP",
+    "age": 21,
+    "recruitmentAddr": "Wandegeya",
+    "nextOfKin": "Isaac PM",
+    "nextOfKinContact": "0789123456",
+    "referredBy": "Paul MK",
+    "phoneNumber": "0779123456",
+    "onBoardingStage": "inTraining"
+  },
+  {
+    "_id": "5c8a211f2f8fb814b56fa188",
+    "name": "safeboda",
+    "stage": "Wandegeya",
+    "natIdNumber": "CM2135QWERTP",
+    "age": 30,
+    "recruitmentAddr": "Wandegeya",
+    "nextOfKin": "Ivan PK",
+    "nextOfKinContact": "0789123451",
+    "referredBy": "Musaazi B",
+    "phoneNumber": "0779123452",
+    "onBoardingStage": "inTraining"
+  },
+  {
+    "_id": "5c8a21d02f8fb814b56fa189",
+    "name": "Stephen Matte",
+    "stage": "Kikoni",
+    "natIdNumber": "PM2974QWE90UP",
+    "age": 34,
+    "recruitmentAddr": "Kikoni",
+    "nextOfKin": "Sandrah Oh",
+    "nextOfKinContact": "0789123453",
+    "referredBy": "Paul MK",
+    "phoneNumber": "0779123454"
+  },
+  {
+    "_id": "5c8a21f22f8fb814b56fa18a",
+    "name": "Daniel Mukiibi",
+    "stage": "Kisaasi",
+    "natIdNumber": "QM2134QWE80UP",
+    "age": 22,
+    "recruitmentAddr": "Kisaasi",
+    "nextOfKin": "John Mpabaana",
+    "nextOfKinContact": "0759123455",
+    "referredBy": "Edith Lutalo",
+    "phoneNumber": "0779123457"
+  },
+  {
+    "_id": "5c8a22c62f8fb814b56fa18b",
+    "name": "Matia Seforoza",
+    "stage": "Tttula",
+    "natIdNumber": "PM21u4Q8E90UP",
+    "age": 32,
+    "recruitmentAddr": "Tttula Stage",
+    "nextOfKin": "John Snow",
+    "nextOfKinContact": "0789123458",
+    "referredBy": "Janet",
+    "phoneNumber": "0779123459"
+  },
+  {
+    "_id": "5c8a23412f8fb814b56fa18c",
+    "name": "Jonathan Mulumba",
+    "stage": "Ntinda",
+    "natIdNumber": "PM213QQWE97UP",
+    "age": 30,
+    "recruitmentAddr": "Home",
+    "nextOfKin": "Harriet Kigundu",
+    "nextOfKinContact": "0787123450",
+    "referredBy": "Kagave Musaazi",
+    "phoneNumber": "0705123451",
+    "onBoardingStage": "readyForActivation"
+  },
+  {
+    "_id": "5c8a23c82f8fb814b56fa18d",
+    "name": "Nakintu Sandra",
+    "stage": "Kibuli",
+    "natIdNumber": "CM2134LWE90UP",
+    "age": 27,
+    "recruitmentAddr": "Kampala Road",
+    "nextOfKin": "Bbale Francis",
+    "nextOfKinContact": "0789123450",
+    "referredBy": "Paul MK",
+    "phoneNumber": "0705123452",
+    "onBoardingStage": "readyForActivation"
+  },
+  {
+    "_id": "5c8a23de2f8fb814b56fa18e",
+    "name": "Rebecca Namusoke",
+    "stage": "Kisaasi",
+    "natIdNumber": "RM2XM4QWE90UP",
+    "age": 26,
+    "recruitmentAddr": "Safe Boda Offices",
+    "nextOfKin": "Yiga Simon",
+    "nextOfKinContact": "0788123456",
+    "referredBy": "Paul MK",
+    "phoneNumber": "0715123453",
+    "onBoardingStage": "readyForActivation"
+  }
+]

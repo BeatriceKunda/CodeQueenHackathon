@@ -1,0 +1,80 @@
+[
+  {
+    "_id": "5c8a1d5b0190b214360dc057",
+    "firstName": "safeboda",
+    "lastName": "Admin",
+    "username": "admin",
+    "email": "admin@safeboda.com",
+    "role": "admin",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "0772123127"
+  },
+  {
+    "_id": "5c8a1dfa2f8fb814b56fa181",
+    "firstName": "Kelly",
+    "lastName": "Busingye",
+    "username": "kelly",
+    "email": "kelly@safeboda.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "0772123121",
+    "drivers": [
+      "5c8a23de2f8fb814b56fa18e",
+      "5c8a23c82f8fb814b56fa18d",
+      "5c8a23412f8fb814b56fa18c"
+    ]
+  },
+  {
+    "_id": "5c8a1e1a2f8fb814b56fa182",
+    "firstName": "Gilbert",
+    "lastName": "Mwesigwa",
+    "username": "gilbert",
+    "email": "gilbert@safeboda.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "07721231272",
+    "drivers": ["5c8a22c62f8fb814b56fa18b", "5c8a21f22f8fb814b56fa18a"]
+  },
+  {
+    "_id": "5c8a1ec62f8fb814b56fa183",
+    "firstName": "Paul",
+    "lastName": "Walike",
+    "username": "paul",
+    "email": "paul@safeboda.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "0772123123"
+  },
+  {
+    "_id": "5c8a1f292f8fb814b56fa184",
+    "firstName": "Kenneth",
+    "lastName": "Mulindwa",
+    "username": "kenny",
+    "email": "kenny@safeboda.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "0772123124"
+  },
+  {
+    "_id": "5c8a1f4e2f8fb814b56fa185",
+    "firstName": "Jolly",
+    "lastName": "kibalama",
+    "username": "jolly",
+    "email": "jolly@safeboda.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "0772123125"
+  },
+  {
+    "_id": "5c8a201e2f8fb814b56fa186",
+    "firstName": "Samuel",
+    "lastName": "L. Jackson",
+    "username": "jason",
+    "email": "jason@safeboda.com",
+    "password": "12345678",
+    "passwordConfirm": "12345678",
+    "phoneNumber": "0772123126",
+    "drivers": ["5c8a211f2f8fb814b56fa188", "5c8a20d32f8fb814b56fa187"]
+  }
+]
