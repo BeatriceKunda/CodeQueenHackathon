@@ -1,4 +1,6 @@
 const Staff = require("../models/staff");
+const Driver = require("../models/drivers");
+
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
@@ -49,4 +51,32 @@ const isLoggedIn = async (req, res, next) => {
 };
 
 
-module.exports = { login, registerDriver, dashboard, isLoggedIn, registerRecruiter }
+const registeredDrivers = async (req, res) => {
+    const drivers = await Driver.find({ onBoardingStage: 'registered' });
+    res.status(200).render('registeredDrivers', { drivers });
+}
+
+const driversInTraining = async (req, res) => {
+    const drivers = await Driver.find({ onBoardingStage: 'inTraining' });
+    res.status(200).render('driversInTraining', { drivers });
+}
+
+const driversActivationReady = async (req, res) => {
+    const drivers = await Driver.find({ onBoardingStage: 'readyForActivation' });
+    res.status(200).render('driversActivationReady', { drivers });
+}
+
+const driverDetails = async (req, res) => {
+    const driver = await Driver.findById(req.params.id);
+    res.status(200).render('driverDetails', { driver });
+}
+
+const editDriver = async (req, res) => {
+    const driver = await Driver.findById(req.params.id);
+    res.status(200).render('editDriver', { driver });
+}
+
+
+
+
+module.exports = { login, registerDriver, dashboard, isLoggedIn, registerRecruiter, registeredDrivers, driversInTraining, driversActivationReady, driverDetails, editDriver }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+html(lang="en")
+
+head 
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(type="text/javascript", src="https://www.gstatic.com/charts/loader.js")
+    link(rel="stylesheet" href="/css/dashboard.css")
+    script(src="/js/pie.js")
+    script(src="/js/line.js")
+    title= `${driver.name} | Safe Boda Registration`
+
+body
+    #container-fluid
+        .row
+            .col-lg-3
+                #sideMenu
+                    img(src="/images/logo.png" alt="logo")
+                    ul.menu
+                        a(href="/dashboard")
+                            li Dashboard
+                    ul.dropdown.menu
+                        li Registrations
+                        .dropdown-content
+                            a(href="/register-driver") Register Driver
+                            a(href="/register-recruiter") Register Recruiter
+                    
+                    ul.dropdown.menu
+                        li Onboarding Stages
+                        .dropdown-content
+                            a(href="/registered-drivers") Registered drivers
+                            a(href="/in-training") In Training
+                            a(href="/ready-for-activation") Ready for activation
+                    ul.menu
+                        a.logout.logout-btn
+                            li Logout
+            
+            .col-lg-8
+                #titleBar
+                    h2 Edit Profile for #{driver.name}
+                    #profilePic
+                        img(src="/images/admin.png")
+                #totalSales
+                    .card.p-4
+                        p
+                            | The edit for the profile &nbsp
+                            strong #{driver.name}
+                            | &nbsp are to be completed at a later date
+                        .row
+                            .col-md-4
+                                a.btn.profile-edit(href=`/driver/view/${driver._id}`)
+                                    | Go Back
+                             
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+script(src="bootstrap-4.4.1-dist/js/bootstrap.min.js")
+script(src="/js/login.js")

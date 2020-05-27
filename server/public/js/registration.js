@@ -10,7 +10,7 @@ const hideAlert = () => {
     if (el) el.parentElement.removeChild(el);
 }
 
-const registerDriver = async (name, stage, natIdNumber, age, phoneNumber, recruitmentAddr, nextOfKin, nextOfKinContact) => {
+const registerDriver = async (name, stage, natIdNumber, age, phoneNumber, recruitmentAddr, referredBy, nextOfKin, nextOfKinContact) => {
     try {
         const response = await axios({
             method: 'POST',
@@ -22,14 +22,15 @@ const registerDriver = async (name, stage, natIdNumber, age, phoneNumber, recrui
                 age,
                 phoneNumber,
                 recruitmentAddr,
+                referredBy,
                 nextOfKin,
                 nextOfKinContact
             }
         })
         if (response.data.message === "success") {
-            showAlert('success', "Recruiter Registered Successfuly");
+            showAlert('success', "Driver Registered Successfuly");
             window.setTimeout(() => {
-                location.assign(`/dashboard`);
+                location.assign(`/register-driver`);
             }, 1500)
         }
     } catch (error) {
@@ -39,7 +40,7 @@ const registerDriver = async (name, stage, natIdNumber, age, phoneNumber, recrui
 }
 
 
-var registrationForm = document.querySelector('.contact_form ');
+var registrationForm = document.querySelector('.register-driver');
 
 if (registrationForm) {
     registrationForm.addEventListener('submit', function (e) {
@@ -49,10 +50,11 @@ if (registrationForm) {
         var natIdNumber = document.getElementById('natIdNumber').value;
         var age = document.getElementById('age').value;
         var phoneNumber = document.getElementById('phoneNumber').value;
-        var password = document.getElementById('password').value;
+        var recruitmentAddr = document.getElementById('recruitmentAddr').value;
+        var referredBy = document.getElementById('referredBy').value;
         var nextOfKin = document.getElementById('nextOfKin').value;
         var nextOfKinContact = document.getElementById('nextOfKinContact').value;
 
-        registerDriver(name, stage, natIdNumber, age, phoneNumber, password, nextOfKin, nextOfKinContact); // call this to login
+        registerDriver(name, stage, natIdNumber, age, phoneNumber, recruitmentAddr, referredBy, nextOfKin, nextOfKinContact); // call this to login
     })
 }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+html(lang="en")
+
+head 
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(type="text/javascript", src="https://www.gstatic.com/charts/loader.js")
+    link(rel="stylesheet" href="/css/dashboard.css")
+    script(src="/js/pie.js")
+    script(src="/js/line.js")
+    title= `${driver.name} | Safe Boda Registration`
+
+body
+    #container-fluid
+        .row
+            .col-lg-3
+                #sideMenu
+                    img(src="/images/logo.png" alt="logo")
+                    ul.menu
+                        a(href="/dashboard")
+                            li Dashboard
+                    ul.dropdown.menu
+                        li Registrations
+                        .dropdown-content
+                            a(href="/register-driver") Register Driver
+                            a(href="/register-recruiter") Register Recruiter
+                    
+                    ul.dropdown.menu
+                        li Onboarding Stages
+                        .dropdown-content
+                            a(href="/registered-drivers") Registered drivers
+                            a(href="/in-training") In Training
+                            a(href="/ready-for-activation") Ready for activation
+                    ul.menu
+                        a.logout.logout-btn
+                            li Logout
+            
+            .col-lg-8
+                #titleBar
+                    h2 Details for #{driver.name}
+                    #profilePic
+                        img(src="/images/admin.png")
+                #totalSales
+                    .card.p-4
+                        .row
+                            .col-md-4
+                                img.img-thumbnail#thumb(src="/images/icon.png")
+                                p
+                                    strong DRIVER STATUS
+                                
+                                - if (driver.onBoardingStage === 'registered')
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" checked)
+                                            | &nbsp Registered
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" disabled)
+                                            | &nbsp In Training
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" disabled) 
+                                            | &nbsp Ready For Activation
+                                - if (driver.onBoardingStage === 'inTraining')
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" disabled) 
+                                            | &nbsp Registered
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" checked) 
+                                            | &nbsp In Training
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" disabled) 
+                                            | &nbsp Ready For Activation
+                                - if (driver.onBoardingStage === 'readyForActivation')
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" disabled) 
+                                            | &nbsp Registered
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" disabled) 
+                                            | &nbsp In Training
+                                    .radio
+                                        label
+                                            input(type="radio" name="optradio" checked) 
+                                            | &nbsp Ready For Activation
+
+
+                            .col-md-8
+                                h5#driver-name= driver.name
+                                p
+                                    strong Boda Stage Address: 
+                                    | #{driver.stage}
+                                p
+                                    strong National Identity Card Number(NIN): 
+                                    | #{driver.natIdNumber}
+                                p
+                                    strong Age: 
+                                    | #{driver.age}
+                                p
+                                    strong Phone Number: 
+                                    | #{driver.phoneNumber}
+                                p
+                                    strong Recruitment Address: 
+                                    | #{driver.recruitmentAddr}
+                                - if (driver.referredBy)
+                                    p
+                                        strong Referred By: 
+                                        | #{driver.referredBy}
+                                p
+                                    strong Next of kin: 
+                                    | #{driver.nextOfKin}
+                                p
+                                    strong Next of kin contact: 
+                                    | #{driver.nextOfKinContact}
+                                - if (driver.email)
+                                    p
+                                        strong Email: 
+                                        | #{driver.email}
+                                a.btn.profile-edit(href=`/driver/edit/${driver._id}`)
+                                        | Edit Profile
+
+                                    
+
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+script(src="bootstrap-4.4.1-dist/js/bootstrap.min.js")
+script(src="/js/login.js")

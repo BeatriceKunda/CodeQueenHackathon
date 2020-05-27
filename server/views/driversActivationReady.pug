@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+html(lang="en")
+
+head 
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/bootstrap-4.4.1-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(type="text/javascript", src="https://www.gstatic.com/charts/loader.js")
+    link(rel="stylesheet" href="/css/dashboard.css")
+    script(src="/js/pie.js")
+    script(src="/js/line.js")
+    title Ready for activation | Safe Boda Registration
+
+body
+    #sideMenu
+        img(src="images/logo.png" alt="logo")
+        ul.menu
+            a(href="/dashboard")
+                li Dashboard
+        ul.dropdown.menu
+            li Registrations
+            .dropdown-content
+                a(href="/register-driver") Register Driver
+                a(href="/register-recruiter") Register Recruiter
+        
+        ul.dropdown.menu
+            li Onboarding stages
+            .dropdown-content
+                a(href="/registered-drivers") Registered drivers
+                a(href="/in-training") In Training
+                a(href="/ready-for-activation") Ready for activation
+        ul.menu
+            a.logout.logout-btn
+                li Logout
+
+    #content
+        #titleBar
+            h2 Drivers Ready For Activation
+            #profilePic
+                img(src="/images/admin.png")
+
+        #totalSales
+            .content.table-full-width
+                table.table-hover.table-striped.sortable
+                    h3 Drivers Ready for Activation
+                    button.btn.btn-warning(onclick="exportTableToExcel('table', 'members-data')")
+                        i.fa.fa-download
+                    thead
+                        th Name
+                        th Stage Address
+                        th Contact
+                        th Action
+                    tbody
+                        each driver in drivers
+                            tr
+                                td= driver.name
+                                td= driver.stage
+                                td= driver.phoneNumber
+                                td
+                                    a.btn.btn-primary(href=`/driver/view/${driver._id}`)
+                                        i.fa.fa-eye
+                                    //- button.btn.btn-danger(type="button")
+                                    //-     i.fa.fa-trash
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js")
+script(src="bootstrap-4.4.1-dist/js/bootstrap.min.js")
+script(src="/js/login.js")

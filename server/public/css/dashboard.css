@@ -1,13 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:100, 300, 400, 700);
 
 html {
   height: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 body {
   height: 100%;
   margin: 0;
-  
+
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -16,7 +16,6 @@ body {
 }
 
 .dropbtn {
-
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -26,14 +25,13 @@ body {
 
 /* The container <div> - needed to position the dropdown content */
 
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 table.dataTable thead .sorting:after,
@@ -46,7 +44,7 @@ table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
-bottom: .5em;
+  bottom: 0.5em;
 }
 th {
   cursor: pointer;
@@ -61,13 +59,14 @@ th {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 
 /* Side Bar */
 #sideMenu {
@@ -78,18 +77,17 @@ th {
   display: table-cell;
   vertical-align: top;
   color: #fff;
-
 }
 .menu {
   list-style: none;
-  margin:  24px 0;
+  margin: 24px 0;
   padding: 0;
 }
-#image{
+#image {
   margin: auto;
-  width:100px
+  width: 100px;
 }
-p{
+p {
   font-size: 20px;
   margin: auto;
   padding-bottom: 10px;
@@ -117,14 +115,13 @@ p{
   list-style-type: none;
 } */
 
-#user{
+#user {
   background-color: #ff8800;
 }
 
-
- .card{
-   width:100% ;
- }
+.card {
+  width: 100%;
+}
 /* Content */
 #content {
   width: 100%;
@@ -151,7 +148,7 @@ p{
 #profilePic img {
   width: 100%;
 }
-th{
+th {
   /* font-size: 70px; */
 }
 .controls {
@@ -183,7 +180,9 @@ th{
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  top: 0; bottom: 0; right: 2%;
+  top: 0;
+  bottom: 0;
+  right: 2%;
   margin: auto;
 }
 .plus {
@@ -196,9 +195,9 @@ th{
   line-height: 8px;
   padding: 4px;
   margin-right: 6px;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  color: rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, 0.2);
 }
 .red {
   background: #ec1561;
@@ -207,21 +206,20 @@ th{
   background: #ff9939;
 }
 .bluee {
-  background:blue;
+  background: blue;
 }
 
 /* Table */
 @media (min-width: 992px) {
-table {
-  width: 100%;
-  border-collapse: collapse;
-  
-        overflow: visible;
-}}
-th {
-  
-  cursor: pointer;
+  table {
+    width: 100%;
+    border-collapse: collapse;
 
+    overflow: visible;
+  }
+}
+th {
+  cursor: pointer;
 
   text-align: center;
   color: black;
@@ -275,3 +273,17 @@ h3 {
   clear: both;
 }
 
+#thumb {
+  border: 1px solid;
+  width: 60%;
+  height: 200px;
+}
+
+#driver-name {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.profile-edit {
+  background-color: #ff8800;
+}
